@@ -1,0 +1,178 @@
+%\documentclass{article}
+%\documentclass[12pt,a4paper,oneside,american,ngerman]{report}
+\documentclass[a4paper,oneside,english,american,ngerman]{article}
+%\documentclass[a4paper,oneside,english,american,ngerman]{report}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tocloft}
+\usepackage[automake,nonumberlist]{glossaries}
+\usepackage[colorlinks]{hyperref}
+
+
+%für eine komplette Änderungshistorie
+%\usepackage[draft]{changes}
+
+
+%Changebar Code Begin
+%Paket für das Change Tracking für rote und grüne Kästen
+\usepackage[xcolor]{changebar}
+
+%Command for delete text in red
+\newcommand{\deleted}[1]{%
+  \cbcolor{red}
+  \begin{changebar}
+    #1
+  \end{changebar}%
+  }%
+
+%Command for new text in green
+\newcommand{\added}[1]{%
+  \cbcolor{green}
+  \begin{changebar}
+    #1
+  \end{changebar}%
+  }%
+
+%Changebar Code End
+
+% Einstellungen für das Layout im Stil der Stirling Universität
+\geometry{
+    a4paper,
+    left=2cm,
+    right=2.5cm,
+    top=2cm,
+    bottom=2cm,
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[width=0.1\textwidth]{./pictures/logo.png}}
+\fancyhead[R]{thandsome GbR}
+\fancyfoot[L]{Letter of Intent \- Thorsten Maruhn \& Annika Kuchenbecker}
+\fancyfoot[R]{\thepage/\pageref{LastPage}}
+
+\setlength{\headheight}{15.73102pt}
+\addtolength{\topmargin}{-3.73102pt}
+
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Farbdefinitionen
+\definecolor{stirlinggreen}{RGB}{0,0,0}
+\definecolor{stirlinggold}{RGB}{0,0,0}
+
+
+
+
+% Glossareintrag hinzufügen
+\newglossaryentry{sample}{
+    name=Sample,
+    description={A representative subset of a larger group}
+}
+
+
+% Inhaltsverzeichnis konfigurieren
+\setcounter{tocdepth}{4} % Erlaubt bis zu 4 Untergliederungsebenen im Inhaltsverzeichnis
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecdotsep}{\cftdotsep}
+\renewcommand{\cftsubsecdotsep}{\cftdotsep}
+\renewcommand{\cftsubsubsecdotsep}{\cftdotsep}
+
+
+% Befehl für die vierte Untergliederungsebene hinzufügen
+\makeatletter
+\newcommand*\l@subsubsubsec{\@dottedtocline{4}{7.0em}{4.1em}}
+\makeatother
+\makeglossaries{}
+
+
+\begin{document}
+
+% Titelseite
+\begin{titlepage}
+    \begin{flushright}
+         \includegraphics[width=0.2\textwidth]{./pictures/logo.png}
+    \end{flushright}
+    
+    \vspace{3cm}
+
+    \begin{center}
+        {\LARGE \color{stirlinggreen} thandsome GbR \par}
+        \vspace{1cm}
+        {\Large \color{stirlinggreen} Letter of Intent \par}
+        \vspace{1.5cm}
+        {\large Thorsten Maruhn \& Annika Kuchenbecker \par}
+        \vfill
+        {\large \color{stirlinggold} \today \par}
+    \end{center}
+\end{titlepage}
+
+% Inhaltsverzeichnis
+\tableofcontents
+\newpage
+
+% Kapitel 1
+\input{chapter1.tex}
+
+
+% Kapitel 2
+%\input{chapter2.tex}
+
+% Testergebnisse
+%\input{result.tex}
+
+\newpage
+%Example for changebar red or green line at the right side of the paper
+%\input{changebar.tex}
+
+%Example of change history in the text with an option to create a list of changes
+%\input{changes.tex}
+
+% Abbildungsverzeichnis ans Ende setzen
+\clearpage
+\listoffigures
+
+
+% Glossar
+\clearpage
+\printglossary{}
+%\listofchanges[style=list,title=List of Changes, show=all]
+%\printnoidxglossaries
+%\printnoidxglossary[type=\acronymtype,title=Acronyms]
+%\printnoidxglossary[title=Glossary]
+
+\end{document}
