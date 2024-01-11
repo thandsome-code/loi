@@ -11,7 +11,7 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage}
 \usepackage{tocloft}
-\usepackage[automake,nonumberlist]{glossaries}
+%\usepackage[automake,nonumberlist]{glossaries}
 \usepackage[colorlinks]{hyperref}
 
 
@@ -96,15 +96,6 @@
 \definecolor{stirlinggold}{RGB}{0,0,0}
 
 
-
-
-% Glossareintrag hinzufügen
-\newglossaryentry{sample}{
-    name=Sample,
-    description={A representative subset of a larger group}
-}
-
-
 % Inhaltsverzeichnis konfigurieren
 \setcounter{tocdepth}{4} % Erlaubt bis zu 4 Untergliederungsebenen im Inhaltsverzeichnis
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -117,8 +108,6 @@
 \makeatletter
 \newcommand*\l@subsubsubsec{\@dottedtocline{4}{7.0em}{4.1em}}
 \makeatother
-\makeglossaries{}
-
 
 \begin{document}
 
@@ -131,12 +120,30 @@
     \vspace{3cm}
 
     \begin{center}
-        {\LARGE \color{stirlinggreen} thandsome GbR \par}
-        \vspace{1cm}
+        % {\LARGE \color{stirlinggreen} thandsome GbR \par}
+        % \vspace{1cm}
+        % {\Large \color{stirlinggreen} Letter of Intent \par}
+        % \vspace{1.5cm}
+        % {\large Thorsten Maruhn \& Annika Kuchenbecker \par}
+        % \vfill
+        % {\large \color{stirlinggold} \today \par}
         {\Large \color{stirlinggreen} Letter of Intent \par}
-        \vspace{1.5cm}
-        {\large Thorsten Maruhn \& Annika Kuchenbecker \par}
-        \vfill
+        \vspace{1cm}
+        {\LARGE \color{stirlinggreen} Verkäufer: \par}
+        {\LARGE \color{stirlinggreen} thandsome GbR \par}
+        {\color{stirlinggreen} Thorsten Maruhn \& Annika Kuchenbecker\par}
+        {\color{stirlinggreen} Schreberstrasse 34 \par}
+        {\color{stirlinggreen} 27755 Delmenhorst \par}
+
+        \vspace{1cm}
+        
+        {\LARGE \color{stirlinggreen} Käufer: \par}
+        {\LARGE \color{stirlinggreen} Nordseeheilbad Carolinensiel-Harlesiel    \par}
+        {\color{stirlinggreen} Kai Koch \par}
+        {\color{stirlinggreen} Nordseestraße 1 \par}
+        {\color{stirlinggreen} 26409 Nordseeheilbad Carolinensiel-Harlesiel \par}
+
+
         {\large \color{stirlinggold} \today \par}
     \end{center}
 \end{titlepage}
@@ -163,13 +170,13 @@
 %\input{changes.tex}
 
 % Abbildungsverzeichnis ans Ende setzen
-\clearpage
-\listoffigures
+%\clearpage
+%\listoffigures
 
 
 % Glossar
-\clearpage
-\printglossary{}
+%\clearpage
+%\printglossary{}
 %\listofchanges[style=list,title=List of Changes, show=all]
 %\printnoidxglossaries
 %\printnoidxglossary[type=\acronymtype,title=Acronyms]
